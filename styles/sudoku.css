@@ -1,0 +1,49 @@
+/* =====================================================================
+   sudoku.css  -  your styles go here (Lab 02, Part 2)
+
+   Native CSS only: the box model, Flexbox, and custom properties. No
+   framework and no media queries. Fill in the rules under each heading
+   and match the screenshots in documentation_images/.
+   ===================================================================== */
+
+:root {
+  --color-hover: #f5dd90;       /* cell under the cursor */
+  --color-user-input: #f2f2f2;  /* a digit the player entered (Lab 06) */
+  --color-error: #f76c5e;       /* a conflicting digit (Lab 06) */
+  --header-bg: #2b2b2b;
+  --board-line: #cfcfcf;        /* thin lines between cells */
+  --block-line: #333;           /* thick lines between 3x3 blocks */
+  --digit: #4a4a4a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  color: #222;
+}
+
+/* ---- site header / nav  (requirement 7) ---------------------------- */
+/* TODO: a Flexbox row on .site-header; push the nav right with
+   margin-left:auto; add flex-wrap so the nav drops below the brand on a
+   narrow screen (that's the whole responsive story - no media query). */
+
+
+/* ---- the board  (requirement 5) ------------------------------------ */
+/* TODO: border-collapse the #board; size each cell and centre the digit;
+   thin cell borders + a THICK border around each 3x3 block
+   (td:nth-child(3n) and tr:nth-child(3n) td); a :hover colour.
+   Also add .user-input and .error rules now - Lab 06 switches them on. */
+
+
+/* ---- the numbers palette  (requirement 6) -------------------------- */
+/* TODO: size + border the .palette cells; a :hover colour; and a
+   .active style for the selected digit (used in Lab 06). */
+
+
+/* ---- high-scores table  (requirement 8) ---------------------------- */
+/* TODO: comfortable padding; left-aligned headings; an underline under
+   the header row of .scores. */
