@@ -14,6 +14,8 @@
   --board-line: #cfcfcf; /* thin lines between cells */
   --block-line: #333; /* thick lines between 3x3 blocks */
   --digit: #4a4a4a;
+  --cell-size: min(54px, 9vw); /*never bigger than 54px or 9% of the viewport width, 9 because 9 cells*/
+  --palette-size: min(40px, 9vw); /*want the palette to be a bit smaller*/
 }
 
 * {
@@ -32,6 +34,7 @@ main {
   padding: 20px;
   margin: 0 auto;
 }
+
 /* ---- site header / nav  (requirement 7) ---------------------------- */
 /* TODO: a Flexbox row on .site-header; push the nav right with
    margin-left:auto; add flex-wrap so the nav drops below the brand on a
@@ -85,12 +88,12 @@ main {
 }
 
 #board td {
-  width: 54px;
-  height: 54px;
+  width: var(--cell-size);
+  height: var(--cell-size);
   border: 1px solid var(--board-line); /* thin lines between cells to center the numbers */
   cursor: pointer;
   text-align: center;
-  font-size: 24px;
+  font-size: calc(var(--cell-size) * 0.45); /*digits shrink with size*/
   color: var(--digit);
 }
 
@@ -124,8 +127,8 @@ main {
 }
 
 .palette td {
-  width: 40px;
-  height: 40px;
+  width: var(--palette-size);
+  height: var(--palette-size);
   text-align: center;
   border: 1px solid var(--board-line);
   cursor: pointer;
