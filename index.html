@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,13 +15,147 @@
          - a <nav> with two links: "Play Game" (index.html) and
            "High Scores" (high_scores.html)
          This same header must appear on high_scores.html too. -->
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <img src="images/logo.gif" alt="" />
+        Sudoku Centre
+      </a>
+      <nav>
+        <a href="index.html">Play Game</a>
+        <a href="high_scores.html">High Scores</a>
+      </nav>
+    </header>
 
     <!-- TODO (Part 1): the page's <main> content.
-         - one <h1>
-         - the 9x9 board as a <table id="board">, with the starting clues
-           from the grid in README requirement 2 hard-coded into the cells
-           (leave the other cells empty)
-         - the numbers palette as a <table id="palette" class="palette">:
-           one row of 1-9 followed by the undo icon (images/undo.png) -->
+        - one <h1>
+          - the 9x9 board as a <table id="board">, with the starting clues
+            from the grid in README requirement 2 hard-coded into the cells
+            (leave the other cells empty)
+            - the numbers palette as a <table id="palette" class="palette">:
+              one row of 1-9 followed by the undo icon (images/undo.png) -->
+    <main>
+      <h1>Play Sudoku</h1>
+      <table id="board">
+        <tr>
+          <td></td>
+          <td>1</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>9</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>4</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>2</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>8</td>
+          <td></td>
+          <td></td>
+          <td>5</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>3</td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>2</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>4</td>
+          <td></td>
+          <td>1</td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td></td>
+          <td>1</td>
+          <td>8</td>
+          <td></td>
+          <td></td>
+          <td>6</td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td>3</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>8</td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td></td>
+          <td>6</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <table id="palette" class="palette">
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+          <td><img src="images/undo.png" alt="Undo" /></td>
+        </tr>
+      </table>
+    </main>
   </body>
 </html>

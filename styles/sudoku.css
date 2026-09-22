@@ -7,12 +7,12 @@
    ===================================================================== */
 
 :root {
-  --color-hover: #f5dd90;       /* cell under the cursor */
-  --color-user-input: #f2f2f2;  /* a digit the player entered (Lab 06) */
-  --color-error: #f76c5e;       /* a conflicting digit (Lab 06) */
+  --color-hover: #f5dd90; /* cell under the cursor */
+  --color-user-input: #f2f2f2; /* a digit the player entered (Lab 06) */
+  --color-error: #f76c5e; /* a conflicting digit (Lab 06) */
   --header-bg: #2b2b2b;
-  --board-line: #cfcfcf;        /* thin lines between cells */
-  --block-line: #333;           /* thick lines between 3x3 blocks */
+  --board-line: #cfcfcf; /* thin lines between cells */
+  --block-line: #333; /* thick lines between 3x3 blocks */
   --digit: #4a4a4a;
 }
 
@@ -26,24 +26,140 @@ body {
   color: #222;
 }
 
+/* noticed the h1 was inside main so i decided to add padding to main to move the "Play Sudoku" heading 
+to try and match the screenshot as much as possible */
+main {
+  padding: 20px;
+  margin: 0 auto;
+}
 /* ---- site header / nav  (requirement 7) ---------------------------- */
 /* TODO: a Flexbox row on .site-header; push the nav right with
    margin-left:auto; add flex-wrap so the nav drops below the brand on a
    narrow screen (that's the whole responsive story - no media query). */
 
+/* this is essentially the navbar styling like the grey bar at the top and stuff */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--header-bg);
+}
+
+/* this is the basically "sudoku centre" text css basically */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* when this wasnt added this like had that sudoku board really big, so this is like the navbar i guess */
+.brand img {
+  width: 36px;
+  height: 36px;
+}
+
+/* this pushes the "play game" and "high scores" links to the right on the navbar */
+.site-header nav {
+  margin-left: auto;
+}
+
+.site-header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
 
 /* ---- the board  (requirement 5) ------------------------------------ */
 /* TODO: border-collapse the #board; size each cell and centre the digit;
    thin cell borders + a THICK border around each 3x3 block
    (td:nth-child(3n) and tr:nth-child(3n) td); a :hover colour.
    Also add .user-input and .error rules now - Lab 06 switches them on. */
+#board {
+  border-collapse: collapse;
+  margin: 0 auto;
+  border: 3px solid var(--block-line);
+}
 
+#board td {
+  width: 54px;
+  height: 54px;
+  border: 1px solid var(--board-line); /* thin lines between cells to center the numbers */
+  cursor: pointer;
+  text-align: center;
+  font-size: 24px;
+  color: var(--digit);
+}
 
+#board td:nth-child(3n) {
+  border-right: 3px solid var(--block-line); /* thick lines between 3x3 blocks */
+}
+
+#board tr:nth-child(3n) td {
+  border-bottom: 3px solid var(--block-line); /* thick lines between 3x3 blocks */
+}
+
+#board td:hover {
+  background-color: var(--color-hover);
+}
+
+#board td.user-input {
+  background-color: var(--color-user-input);
+}
+
+#board td.error {
+  background-color: var(--color-error);
+}
 /* ---- the numbers palette  (requirement 6) -------------------------- */
 /* TODO: size + border the .palette cells; a :hover colour; and a
    .active style for the selected digit (used in Lab 06). */
 
+/* this is for the numbers at the bottom */
+.palette {
+  border-collapse: collapse;
+  margin: 16px auto;
+}
+
+.palette td {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border: 1px solid var(--board-line);
+  cursor: pointer;
+}
+
+.palette td:hover {
+  background-color: var(--color-hover);
+}
+
+.palette td.active {
+  background-color: var(--color-hover);
+  font-weight: bold;
+}
+
+/* the arrow on the end */
+.palette img {
+  width: 20px;
+  vertical-align: middle;
+}
 
 /* ---- high-scores table  (requirement 8) ---------------------------- */
 /* TODO: comfortable padding; left-aligned headings; an underline under
    the header row of .scores. */
+.scores {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.scores th,
+.scores td {
+  padding: 8px 16px;
+  text-align: left;
+}
+
+.scores thead {
+  border-bottom: 2px solid var(--block-line);
+}
